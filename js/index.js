@@ -122,12 +122,7 @@ function calculadora(){
 	        break;
 			case("menos"):
 		    valor_boton="-";
-				if (oper == 0){
-					pulso_Resta();
-					oper++;
-				}else{
-					changer("resultado", "Atencion, ya ha elegido su operacion");
-				}
+				pulso_Resta();
 	        break;
 			case("mult"):
 		    valor_boton="x";
@@ -165,6 +160,7 @@ function calculadora(){
 		var element = document.getElementById("calculadora");
 		element.innerHTML ="";
 		changer("resultado", "");
+		oper=0;
 	}
 
 	function pulso_Boton(boton){
@@ -173,7 +169,7 @@ function calculadora(){
 	function suma(nums) {
 		var total = 0;
 		console.log(nums);
-		total = parseFloat(nums[0]) + parseFloat(nums[1]); 
+		total = parseFloat(nums[0]) + parseFloat(nums[1]);
 		var result = total.toString();
 		changer("resultado", result);
 		answer = result;
