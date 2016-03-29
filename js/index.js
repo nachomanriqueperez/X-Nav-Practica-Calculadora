@@ -122,7 +122,12 @@ function calculadora(){
 	        break;
 			case("menos"):
 		    valor_boton="-";
-				pulso_Resta();
+				if (oper == 0){
+					pulso_Resta();
+					oper++;
+				}else{
+					changer("resultado", "Atencion, ya ha elegido su operacion, esta calculadora no funciona con numeros negativos");
+				}
 	        break;
 			case("mult"):
 		    valor_boton="x";
